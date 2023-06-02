@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const db="mongodb+srv://brahma:brahma@cluster0.bp5x20b.mongodb.net/"
+const db="mongodb+srv://brahma:brahma@cluster0.bp5x20b.mongodb.net/Fitbizz?retryWrites=true&w=majority"
 
 //const localdb='mongodb://localhost:27017/Fitbizz'
 
