@@ -1,13 +1,13 @@
 const mongoose=require('mongoose');
 
 //MongoDB Atlas connection string
-//const db="mongodb+srv://brahma:brahma@cluster0.bp5x20b.mongodb.net/Fitbizz?retryWrites=true&w=majority"
+const db="mongodb+srv://brahma:brahma@cluster0.bp5x20b.mongodb.net/Fitbizz?retryWrites=true&w=majority"
 
 //Localhost Connection string
-const localdb='mongodb://localhost:27017/Fitbizz'
+//const localdb='mongodb://localhost:27017/Fitbizz'
 
 mongoose.Promise=global.Promise;
-mongoose.connect(localdb,{
+mongoose.connect(db,{
     useNewUrlParser:true,
     useUnifiedTopology:false,
     
