@@ -4,6 +4,7 @@ const  mongoose  = require('./db/mongoose')
 const bodyParser = require('body-parser');
 const cors=require('cors');
 
+const userRouter=require('./routes/UsersRoutes')
 
 //Load in Foods Routes
 const foodRouter=require('./routes/foodRoutes')
@@ -15,6 +16,8 @@ const recipesRouter=require('./routes/recipesRoutes')
 const weightgainRouter=require('./routes/weightgainRoutes')
 //Load in weightloss Routes
 const weightlossRouter=require('./routes/weightlossRoutes')
+//Load in ContactUs Routes
+const contactUsRouter=require('./routes/contactUsRoutes')
 
 //Loading middleware
 app.use(bodyParser.json());
@@ -31,11 +34,13 @@ app.use(function(req, res, next) {
 
 
 // Routes 
+app.use(userRouter)
 app.use(foodRouter);
 app.use(exercisesRouter);
 app.use(recipesRouter);
 app.use(weightgainRouter);
 app.use(weightlossRouter);
+app.use(contactUsRouter);
 
 
 // //Running fitbizz app using nodejs on port 3000
