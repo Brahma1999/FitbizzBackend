@@ -4,8 +4,8 @@ const  mongoose  = require('./db/mongoose')
 const bodyParser = require('body-parser');
 const cors=require('cors');
 
+//Load in User Routes
 const userRouter=require('./routes/UsersRoutes')
-
 //Load in Foods Routes
 const foodRouter=require('./routes/foodRoutes')
 //Load in Exercises Routes
@@ -27,11 +27,12 @@ app.use(function(req, res, next) {
    // headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.header("Access-Control-Allow-Origin", "*",); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Methods" ,"*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,  Authorization");
     next();
   });
 
-
+ 
+  
 
 // Routes 
 app.use(userRouter)

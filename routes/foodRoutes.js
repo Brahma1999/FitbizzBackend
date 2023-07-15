@@ -33,16 +33,7 @@ router.post('/foodItems', (req, res) => {
     })
 })
 
-//PATCH   Path- /foodItems/:id
-// Update a Food Item
-router.patch('/foodItems/:id', (req, res) => {
-    //we want to to update the specified food (food item with id in the url) with the new values of  food 
-    Foods.findOneAndUpdate({ _id: req.params.id }, {
-        $set: req.body
-    }).then(() => {
-        res.sendStatus(200);
-    });
-});
+
 
 //DELETE  Path- /foodItems/:id
 //Purpose- Delete a Food Item
@@ -54,6 +45,19 @@ router.delete('/foodItems/:id', (req, res) => {
         res.send(removedFoodItem);
     });
 });
+
+
+
+//PATCH   Path- /foodItems/:id
+// Update a Food Item
+// router.patch('/foodItems/:id', (req, res) => {
+//     //we want to to update the specified food (food item with id in the url) with the new values of  food 
+//     Foods.findOneAndUpdate({ _id: req.params.id }, {
+//         $set: req.body
+//     }).then(() => {
+//         res.sendStatus(200);
+//     });
+// });
 
 
 
